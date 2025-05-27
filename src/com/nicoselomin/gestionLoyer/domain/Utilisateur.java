@@ -1,10 +1,23 @@
 package com.nicoselomin.gestionLoyer.domain;
-import java.util.Date;
+
+
+import java.time.LocalDate;
 
 public abstract class Utilisateur {
-    private String nom;
-    private String prenom;
-    private String numeroTel;
-    private Date dateNaissance;
-    private String adresse;
+    protected String id;
+    protected String nom;
+    protected String prenom;
+    protected String numeroTel;
+    protected LocalDate dateNaissance;
+    protected String adresse;
+
+    public Utilisateur(String id, String nom, String prenom, String numeroTel, LocalDate dateNaissance, String adresse) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.numeroTel = numeroTel;
+        this.dateNaissance = dateNaissance;
+        this.adresse = adresse;
+    }
+
 }
