@@ -1,5 +1,7 @@
 package com.nicoselomin.gestionLoyer.services;
 
+import com.nicoselomin.gestionLoyer.dao.BienImmobilierDAO;
+import com.nicoselomin.gestionLoyer.dao.BienImmobilierDAOImpl;
 import com.nicoselomin.gestionLoyer.domain.*;
 
 import java.util.ArrayList;
@@ -7,6 +9,13 @@ import java.util.List;
 
 public class ProprietaireServices implements IActionProprietaire {
 
+    private final BienImmobilierDAO bienDAO = new BienImmobilierDAOImpl();
+
+    @Override
+    public boolean ajouterBien(BienImmobilier bien) {
+        System.out.println("📥 Enregistrement réel du bien en base...");
+        return bienDAO.save(bien);
+    }
     @Override
     public List<Paiement> suivrePaiements() {
         // 🔧 Simuler les paiements
@@ -17,12 +26,6 @@ public class ProprietaireServices implements IActionProprietaire {
     @Override
     public boolean ajouterContrat(Locataire locataire, BienImmobilier bien) {
         System.out.println("📄 Contrat ajouté entre locataire " + locataire.getId() + " et bien " + bien.getDesignation());
-        return true;
-    }
-
-    @Override
-    public boolean ajouterBien(BienImmobilier bien) {
-        System.out.println("🏠 Bien ajouté : " + bien.getDesignation());
         return true;
     }
 
