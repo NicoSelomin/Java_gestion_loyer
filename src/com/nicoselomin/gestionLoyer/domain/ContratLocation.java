@@ -11,6 +11,17 @@ public class ContratLocation {
     private EtatContrat etat;
     private String lien;
 
+    public ContratLocation(String reference, Date dateEntree, float loyerEtCharges, float depotDeGarantie,
+                           int jourDePaiement, Date dateSortie, EtatContrat etat, String lien) {
+        this.reference = reference;
+        this.dateEntree = dateEntree;
+        this.loyerEtCharges = loyerEtCharges;
+        this.depotDeGarantie = depotDeGarantie;
+        this.jourDePaiement = jourDePaiement;
+        this.dateSortie = dateSortie;
+        this.etat = etat;
+        this.lien = lien;
+    }
 
     // Getters
     public String getReference() {
