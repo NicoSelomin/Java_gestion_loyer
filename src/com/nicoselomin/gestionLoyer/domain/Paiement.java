@@ -2,7 +2,7 @@ package com.nicoselomin.gestionLoyer.domain;
 import java.util.Date;
 
 public class Paiement {
-    private String idPaiement;
+    private int idPaiement;
     private Date mois;
     private float montantPaye;
     private Date datePaiement;
@@ -10,7 +10,7 @@ public class Paiement {
     private StatutPaiement statut;
 
     //Getters
-    public String getIdPaiement() {
+    public int getIdPaiement() {
         return idPaiement;
     }
 
